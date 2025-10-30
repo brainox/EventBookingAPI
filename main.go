@@ -12,6 +12,8 @@ import (
 func main() {
 	// initialize the database
 	database.InitDB()
+
+	// Initialize Gin router
 	server := gin.Default()
 
 	server.GET("/events", getEvents)
@@ -21,7 +23,11 @@ func main() {
 }
 
 func getEvents(context *gin.Context) {
-	events := models.GetAllEvents()
+	events, err := models.GetAllEvents()
+	if err != nil {
+		context.JSON(http.StatusInternalServerError, gin.H{"error": "Could not retrieve events"})
+		return
+	}
 	context.JSON(http.StatusOK, events)
 }
 
@@ -38,7 +44,11 @@ func createEvent(context *gin.Context) {
 	event.ID = 1
 	event.UserID = 1
 
-	event.Save()
+	err = event.Save()
+	if err != nil {
+		context.JSON(http.StatusInternalServerError, gin.H{"error": "Could not create event"})
+		return
+	}
 
 	context.JSON(http.StatusCreated, gin.H{"message": "Event created successfully", "event": event})
 }
