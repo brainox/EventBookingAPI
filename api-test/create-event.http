@@ -2,8 +2,9 @@ POST http://localhost:8080/events
 content-type: application/json
 
 {
-    "name": "Annual Conference",
-    "description": "A conference to discuss annual achievements and plans.",
-    "location": "New York City",
-    "dateTime": "2024-09-15T09:00:00Z"
+  "name": "Fake name",
+  "description": "Fake description.",
+  "location": "Abuja, NG",
+  "datetime": "2023-09-15T09:00:00Z",
+  "user_id": 4
 }

@@ -1,0 +1,10 @@
+PUT http://localhost:8080/events/4
+content-type: application/json
+
+{
+  "name": "Updated fake event",
+  "description": "An updated description for the fake event.",
+  "location": "Uyo, NG",
+  "datetime": "2023-09-15T09:00:00Z",
+  "user_id": 4
+}
