@@ -1,10 +1,11 @@
 POST http://localhost:8080/events
 content-type: application/json
+authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InRlc3RAZXhhbXBsZS5jb20iLCJleHAiOjE3NjI0Njk1ODcsInVzZXJJZCI6MH0.Nvjy7oq2r5y47MwWHuBuWW43jSkY1hZrsbvZIKKdK7U
 
 {
   "name": "Fake name",
   "description": "Fake description.",
   "location": "Abuja, NG",
   "datetime": "2023-09-15T09:00:00Z",
-  "user_id": 4
+  "user_id": 1
 }
