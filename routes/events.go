@@ -62,7 +62,14 @@ func updateEvent(context *gin.Context) {
 		return
 	}
 
-	_, err = models.GetEventByID(eventId)
+	userId := context.GetInt64("userId")
+	event, err := models.GetEventByID(eventId)
+
+	if event.UserID != userId {
+		context.JSON(http.StatusForbidden, gin.H{"message": "You do not have permission to update this event."})
+		return
+	}
+
 	if err != nil {
 		context.JSON(http.StatusInternalServerError, gin.H{"error": "Could not fetch event"})
 		return
@@ -93,8 +100,14 @@ func deleteEvent(context *gin.Context) {
 		return
 	}
 
-	// Check if event exists
+	userId := context.GetInt64("userId")
 	event, err := models.GetEventByID(eventId)
+
+	if event.UserID != userId {
+		context.JSON(http.StatusForbidden, gin.H{"message": "You do not have permission to update this event."})
+		return
+	}
+
 	if err != nil {
 		context.JSON(http.StatusInternalServerError, gin.H{"error": "Could not fetch the event"})
 		return
