@@ -1,10 +1,10 @@
-PUT http://localhost:8080/events/4
+PUT http://localhost:8080/events/7
 content-type: application/json
+authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InRlc3QzQGV4YW1wbGUuY29tIiwiZXhwIjoxNzYyNDc1ODk0LCJ1c2VySWQiOjN9.f1zqlc5PlL0G8mcOOent2lXw1HMvE-N3qH4xcVb-rxA
 
 {
-  "name": "Updated fake event",
-  "description": "An updated description for the fake event.",
+  "name": "Updated fake event 1000",
+  "description": "An updated description for the fake event 1.",
   "location": "Uyo, NG",
-  "datetime": "2023-09-15T09:00:00Z",
-  "user_id": 4
+  "datetime": "2023-09-15T09:00:00Z"
 }

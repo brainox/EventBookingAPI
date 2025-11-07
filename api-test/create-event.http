@@ -1,10 +1,10 @@
 POST http://localhost:8080/events
 content-type: application/json
-authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InRlc3QzQGV4YW1wbGUuY29tIiwiZXhwIjoxNzYyNDcxMzQyLCJ1c2VySWQiOjN9.1YRoeQlxtcRIAkEaaE9fiWvkcXx_Hxr5Qe7Ux4Hrvns
+authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InRlc3Q0QGV4YW1wbGUuY29tIiwiZXhwIjoxNzYyNDc5OTU0LCJ1c2VySWQiOjR9.c17AJZvbrKJIwQLIsqvR6mOhqL5W8yArSVAzwzJmen0
 
 {
-  "name": "Fake name 6",
-  "description": "Fake description 5.",
+  "name": "event 1",
+  "description": "event 1 description.",
   "location": "Accra, Ghana",
   "datetime": "2023-09-15T09:00:00Z"
 }
